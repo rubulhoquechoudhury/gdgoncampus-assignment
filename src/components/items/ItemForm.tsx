@@ -50,16 +50,12 @@ export function ItemForm() {
     });
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
-        if (!user) {
-            toast({ variant: 'destructive', title: 'Not authenticated', description: 'You must be logged in to submit a report.' });
-            return;
-        }
         setLoading(true);
 
         try {
             let imageUrl: string | undefined = undefined;
             if (values.image) {
-                const imageRef = ref(storage, `items/${user.uid}/${Date.now()}_${values.image.name}`);
+                const imageRef = ref(storage, `items/${user?.uid || 'anonymous'}/${Date.now()}_${values.image.name}`);
                 const snapshot = await uploadBytes(imageRef, values.image);
                 imageUrl = await getDownloadURL(snapshot.ref);
             }
@@ -69,8 +65,8 @@ export function ItemForm() {
                 ...values,
                 date: Timestamp.fromDate(values.date),
                 imageUrl,
-                userId: user.uid,
-                userEmail: user.email,
+                userId: user?.uid || null,
+                userEmail: user?.email || null,
                 createdAt: Timestamp.now(),
             });
 

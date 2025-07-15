@@ -14,8 +14,8 @@ type AuthContextType = {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const protectedRoutes = ['/dashboard', '/report'];
-const publicRoutes = ['/', '/login', '/register'];
+const protectedRoutes = ['/dashboard'];
+const publicRoutes = ['/', '/login', '/register', '/report'];
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);

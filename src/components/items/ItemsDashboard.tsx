@@ -32,12 +32,18 @@ export function ItemsDashboard() {
       const items = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as ItemReport));
       setLostItems(items);
       setLoading(false);
+    }, (error) => {
+        console.error("Error fetching lost items:", error);
+        setLoading(false);
     });
 
     const unsubFound = onSnapshot(foundQuery, (snapshot) => {
       const items = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as ItemReport));
       setFoundItems(items);
       setLoading(false);
+    }, (error) => {
+        console.error("Error fetching found items:", error);
+        setLoading(false);
     });
 
     return () => {
@@ -89,7 +95,7 @@ export function ItemsDashboard() {
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
         <TabsList>
           <TabsTrigger value="all">All Items</TabsTrigger>
-          <TabsTrigger value="my-reports">My Reports</TabsTrigger>
+          {user && <TabsTrigger value="my-reports">My Reports</TabsTrigger>}
         </TabsList>
         <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-2">
             <div className="relative w-full sm:w-auto">
