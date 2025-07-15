@@ -7,12 +7,12 @@ import { getStorage } from "firebase/storage";
 // Replace the placeholder values below with your own Firebase project's configuration.
 // You can find this in your Firebase project settings -> General -> Your apps -> Web app.
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyCx-Q9Z0_EttJPhgrwsSQ1DmuF-muV-250",
+  authDomain: "test-2-4964f.firebaseapp.com",
+  projectId: "test-2-4964f",
+  storageBucket: "test-2-4964f.firebasestorage.app",
+  messagingSenderId: "427222588890",
+  appId: "1:427222588890:web:b363bdb4bd66fb1c5f74e3"
 };
 
 // Recommended Firestore Security Rules:
