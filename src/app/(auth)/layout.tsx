@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Package } from "lucide-react";
+import { Package, X } from "lucide-react";
 
 export default function AuthLayout({
   children,
@@ -15,7 +15,11 @@ export default function AuthLayout({
                 <h1 className="text-3xl font-bold font-headline text-foreground">CampusFind</h1>
             </Link>
         </div>
-        <div className="bg-card p-8 rounded-lg shadow-lg">
+        <div className="bg-card p-8 rounded-lg shadow-lg relative">
+            <Link href="/" className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors">
+                <X className="h-6 w-6" />
+                <span className="sr-only">Close</span>
+            </Link>
             {children}
         </div>
       </div>
