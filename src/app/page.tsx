@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { University, Package, Search } from "lucide-react";
+import { University, Package, Search, Github } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -79,8 +79,14 @@ export default function Home() {
         </section>
       </main>
       <footer className="py-6 border-t">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} CampusFind. All rights reserved.</p>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center text-muted-foreground">
+          <p className="text-sm">&copy; {new Date().getFullYear()} CampusFind. All rights reserved.</p>
+          <div className="flex items-center gap-4 mt-4 sm:mt-0">
+            <Link href="https://github.com/rubulhoquechoudhury/gdgoncampus-assignment" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Github className="h-5 w-5" />
+              <span className="sr-only">GitHub</span>
+            </Link>
+          </div>
         </div>
       </footer>
     </div>
