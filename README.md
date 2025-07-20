@@ -1,5 +1,3 @@
-# Firebase Studio
+# CampusFind
 
-This is a NextJS starter in Firebase Studio.
-
-To get started, take a look at src/app/page.tsx.
+Please visit https://campusfind.vercel.app
